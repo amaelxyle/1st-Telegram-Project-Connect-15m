@@ -133,13 +133,6 @@ jobs:
           user="${{ github.actor }}"
           if ! command -v jq &>/dev/null; then
             sudo apt-get update && sudo apt-get install -y jq
-          - name: 🏆 Update Leaderboard
-        run: |
-          mkdir -p data
-          file="data/leaderboard.json"
-          user="${{ github.actor }}"
-          if ! command -v jq &>/dev/null; then
-            sudo apt-get update && sudo apt-get install -y jq
           fi
           if [ ! -f "$file" ]; then
             echo '{}' > "$file"
@@ -321,7 +314,7 @@ jobs:
             <b>• 🚶 JOURNEY_AT :</b> <code>${{ env.FORMATTED_TIME }}</code>
 
             <b>• 🧩 CULTIVATION_STAGE :</b> <code>${{ env.LEVEL_NAME }}</code>
-            <b>• 👤 IMMORTAL_NAME :</b> queenbeerocm@gmail.com
+            <b>• 👤 IMMORTAL_NAME :</b> haryabee00@gmail.com
 
             <b>🏆 <u>LEADERBOARD (TOP 10 GLOBAL)</u> 🏆</b>
             ━━━━━━━━━━━━━━━━━━━━━━
@@ -337,8 +330,8 @@ jobs:
 
       - name: 🤖 Configure Git
         run: |
-          git config user.name "queenbeerocm"
-          git config user.email "queenbeerocm@gmail.com"
+          git config user.name "haryabee00"
+          git config user.email "haryabee00@gmail.com"
 
       - name: 🚩 Commit & Push Changes (Auto-resolve Conflict)
         run: |
